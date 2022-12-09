@@ -1,0 +1,7 @@
+[
+    { 
+        "filename": "usage.csv",
+        "gcs-object": "usage.csv",
+        "urlpath": "/library/orgLoan/exportUsageReport?format=csv&extension=csv&loanOption=STARTED&from_date=10%2F10%2F2021&from=struct&from_tz=Europe%2FLondon&from_time=00%3A00&to_date=10%2F11%2F2022&to=struct&to_tz=Europe%2FLondon&to_time=23%3A59&location.id=124&includeSublocations=on&groupByType=false"
+    }
+]

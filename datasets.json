@@ -1,0 +1,12 @@
+[
+    { 
+        "filename": "inventory.csv", 
+        "gcs-object": "inventory.csv",
+        "urlpath": "/library/orgInventory/report?format=csv&extension=csv&resolveValues=true&_exportItemType=true&_exportDateCreated=true&_exportDateLastEdited=true&_exportDateLastUpdated=true&exportStatuses=on&_exportStatuses=true&selectedAttributes=1&_exportHomeLocation=true&_exportCurrentLocation=true&exportCurrentLocation=on&statusExclude=true&statuses%5B0%5D=270&statuses%5B1%5D=271&statuses%5B2%5D=609&statuses%5B3%5D=3470&statuses%5B4%5D=4081&statuses%5B5%5D=4791&statuses%5B6%5D=4793&statuses%5B7%5D=4897&statuses%5B8%5D=5588&filterOperator=contains"
+    },
+    { 
+        "filename": "maintenance-due.csv", 
+        "gcs-object": "maintenance-due.csv",
+        "urlpath": "/library/orgMaintenance/export?format=csv&extension=csv&fileName=maintenance-due&showCompleted=false&after=struct&after_tz=Europe%2FLondon&after_time=00%3A00&before=struct&before_tz=Europe%2FLondon&before_time=00%3A00&showDisabled=false"
+    }
+]

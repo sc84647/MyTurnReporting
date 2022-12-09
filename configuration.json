@@ -1,0 +1,5 @@
+{
+    "myturn-server":"edinburgh.myturn.com",
+    "myturn-login-path":"/library/j_spring_security_check",
+    "gs-bucket-name":"edinburgh_myturn"
+}
