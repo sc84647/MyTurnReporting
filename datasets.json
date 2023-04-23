@@ -5,7 +5,7 @@
         "gdrive_name": "inventory",
         "gsheet_id": "1OqsqbYhELd-bNchbrubBmetUnrvyvrikSFVgp2ahXeE",
         "gsheet_worksheet_name": "inventory",
-        "urlpath": "/library/orgInventory/report?format=csv&extension=csv&resolveValues=true&_exportItemType=true&exportItemType=on&_exportDateCreated=true&_exportDateLastEdited=true&_exportDateLastUpdated=true&exportStatuses=on&_exportStatuses=true&selectedAttributes=1&_exportHomeLocation=true&_exportCurrentLocation=true&exportCurrentLocation=on&exportHomeLocation=on&statusExclude=true&filterOperator=contains"
+        "urlpath": "/library/orgInventory/report?format=csv&extension=csv&resolveValues=true&_exportItemType=true&exportItemType=on&_exportDateCreated=true&_exportDateLastEdited=true&_exportDateLastUpdated=true&exportStatuses=on&_exportStatuses=true&selectedAttributes=1&selectedAttributes=11&_exportHomeLocation=true&_exportCurrentLocation=true&exportCurrentLocation=on&exportHomeLocation=on&statusExclude=true&filterOperator=contains"
     },
     { 
         "filename": "maintenance-due.csv", 
