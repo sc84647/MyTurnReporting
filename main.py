@@ -5,7 +5,7 @@ import os
 import sys
 import argparse
 import logging
-
+import datetime
 import gspread
 import csv
 
@@ -27,6 +27,12 @@ def update_gsheet(dataset):
 
     logging.info("Read %s lines from file, parsed as %s rows.  Sheet now has %s rows.", 
                  csvReader.line_num, len(csvData), wsh.row_count)
+
+    wsh = sh.worksheet('metadata')
+    wsh.update('B1', str(datetime.datetime.today()), raw=False)
+
+    logging.info("Updated metadata worksheet")
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--datasets', required=False, nargs='?', default='datasets.json')
