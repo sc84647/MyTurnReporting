@@ -12,9 +12,38 @@ import csv
 def update_gsheet(dataset):
     logging.info("%s", {key: dataset[key] for key in dataset.keys() & {'gsheet_id', 'gdrive_name', 'gsheet_worksheet_name'}})
     
-    csvFile = dataset['filename']
-    csvReader = csv.reader(open(csvFile))
-    csvData = list(csvReader)
+    sourcefile = dataset['filename']
+    ## Dirty hack... 
+    ## TODO - make this generic for JSON objects using a field map defined in the dataset config
+    if filename == 'transfers.json':
+        with open('transfers.json') as file:
+            jsonData = json.load(file)
+
+        csvData = [['Item ID', 'Requested Date','From Location ID','From Location Name','To Location ID','To Location Name','Requested By','Requester Comment','Reservation ID']]
+        for item in jsonData['data']:
+            row = []
+            row.append(item['item']['internalId'])
+            t = datetime.datetime.strptime(item['started'], '%Y-%m-%dT%H:%M:%S.%fZ')
+            row.append(str(t))
+            row.append(item['fromLocation']['id'])
+            row.append(item['fromLocation']['name'])
+            row.append(item['toLocation']['id'])
+            row.append(item['toLocation']['name'])
+            row.append(item['startHandledBy']['displayName'])
+            row.append(item['sendComments'])
+            if item['reservation']:
+                row.append(item['reservation']['id'])
+            else:
+                row.append('')
+            #row.append(item['reservation']['is_needed_now'])
+            csvData.append(row)
+        logging.info("JSON: Read file '%s', parsed as %s rows.", filename, len(csvData))            
+    else:
+        csvReader = csv.reader(open(sourcefile))
+        csvData = list(csvReader)
+        logging.info("CSV: Read file '%s' with %s lines, parsed as %s rows.", filename, csvReader.line_num, len(csvData))
+
+    print(csvData)
 
     gc = gspread.service_account(filename='google_serviceaccount_credentials.json')
     sh = gc.open_by_key(dataset['gsheet_id'])
@@ -25,8 +54,7 @@ def update_gsheet(dataset):
                      params={'valueInputOption': 'USER_ENTERED'},
                      body={'values': csvData})
 
-    logging.info("Read %s lines from file, parsed as %s rows.  Sheet now has %s rows.", 
-                 csvReader.line_num, len(csvData), wsh.row_count)
+    logging.info("Sheet now has %s rows.", wsh.row_count)
 
     wsh = sh.worksheet('metadata')
     wsh.update('B1', str(datetime.datetime.today()), raw=False)
@@ -82,7 +110,7 @@ for dataset in datasets:
     url = 'https://' + configs['myturn-server'] + dataset['urlpath']
     logging.info("Fetching from MyTurn: %s", filename)
 
-    response = s.request("GET", url)
+    response = s.request(dataset['request_method'], url)
     response.raise_for_status() # ensure we notice bad responses
     with open(filename, "w") as f_out:
         f_out.write(response.content.decode('utf-8'))

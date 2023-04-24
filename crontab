@@ -3,3 +3,5 @@ TZ="Europe/London"
 # m h  dom mon dow   command
 12 8-20 * * * cd /app && /usr/local/bin/python main.py --datasets datasets.json --persist > /proc/1/fd/1 2>/proc/1/fd/2
 0 21 * * 1 cd /app && /usr/local/bin/python main.py --datasets datasets-cold.json --persist > /proc/1/fd/1 2>/proc/1/fd/2
+# Transfer records
+20 8,12,15,19 * * 1-5 cd /app && /usr/local/bin/python main.py --datasets datasets-transfer.json --persist > /proc/1/fd/1 2>/proc/1/fd/2

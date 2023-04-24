@@ -1,4 +1,5 @@
 FROM python:3.11-slim
+#RUN apk add --no-cache tzdata
 ENV TZ="Europe/London"
 
 WORKDIR /app

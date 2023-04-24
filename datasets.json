@@ -5,7 +5,8 @@
         "gdrive_name": "inventory",
         "gsheet_id": "1OqsqbYhELd-bNchbrubBmetUnrvyvrikSFVgp2ahXeE",
         "gsheet_worksheet_name": "inventory",
-        "urlpath": "/library/orgInventory/report?format=csv&extension=csv&resolveValues=true&_exportItemType=true&exportItemType=on&_exportDateCreated=true&_exportDateLastEdited=true&_exportDateLastUpdated=true&exportStatuses=on&_exportStatuses=true&selectedAttributes=1&selectedAttributes=11&_exportHomeLocation=true&_exportCurrentLocation=true&exportCurrentLocation=on&exportHomeLocation=on&statusExclude=true&filterOperator=contains"
+        "urlpath": "/library/orgInventory/report?format=csv&extension=csv&resolveValues=true&_exportItemType=true&exportItemType=on&_exportDateCreated=true&_exportDateLastEdited=true&_exportDateLastUpdated=true&exportStatuses=on&_exportStatuses=true&selectedAttributes=1&selectedAttributes=11&selectedAttributes=39&_exportHomeLocation=true&_exportCurrentLocation=true&exportCurrentLocation=on&exportHomeLocation=on&statusExclude=true&filterOperator=contains",
+        "request_method": "GET"
     },
     { 
         "filename": "maintenance-due.csv", 
@@ -13,6 +14,7 @@
         "gdrive_name": "maintenance-due",
         "gsheet_id": "1_ZRJkQU427Nart9QCY-GVaSECPawEvTtDjDMgXcxt4Q",
         "gsheet_worksheet_name": "maintenance-due",
-        "urlpath": "/library/orgMaintenance/export?format=csv&extension=csv&fileName=maintenance-due&showCompleted=false&after=struct&after_tz=Europe%2FLondon&after_time=00%3A00&before=struct&before_tz=Europe%2FLondon&before_time=00%3A00&showDisabled=false"
+        "urlpath": "/library/orgMaintenance/export?format=csv&extension=csv&fileName=maintenance-due&showCompleted=false&after=struct&after_tz=Europe%2FLondon&after_time=00%3A00&before=struct&before_tz=Europe%2FLondon&before_time=00%3A00&showDisabled=false",
+        "request_method": "GET"
     }
 ]
