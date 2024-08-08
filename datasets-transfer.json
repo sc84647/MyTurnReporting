@@ -4,7 +4,7 @@
         "gdrive_name": "transfers",
         "gsheet_id": "1hIB5cN0SYuq_I_L42B9utxxm3gNmT4tzpJE5_gk-A-s",
         "gsheet_worksheet_name": "transfers",
-        "urlpath": "/library/itemTransfer/listJSON",
+        "urlpath": "/library/itemTransfer/listInTransitItemsJSON",
         "request_method": "POST"
     }
 ]
